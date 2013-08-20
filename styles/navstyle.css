@@ -1,0 +1,68 @@
+/*top login nav*/
+ .head ul{list-style-type:none;/* new nav black #171113*/}
+
+ul#top,ul#top1{padding:10px 10px 13px 90px;width:1245px;
+margin:-3px 0px 10px -48px;;  font-family: 'Lobster';color:black;height:5px;
+  font-style: normal;font-size:.9em;background-color:#2B2927;
+  font-weight: 300;
+  src: local('Lobster'), url(http://themes.googleusercontent.com/static/fonts/lobster/v5/MWVf-Rwh4GLQVBEwbyI61Q.woff) format('woff');}
+  
+  
+ul#top li,ul#top1 li {margin:-6px 25px 0px 0px;}
+ul#top1 li{float:right;} 
+ul#top a,ul#top1 a{color:#BAB5B1;}
+ 
+li.left{float:left;}li.right{float:right;} /*
+*/.clear{clear:both;}
+
+
+
+
+a{text-decoration:none;color:#BAB5B1;}
+ul#nav li {
+ text-align:center;
+margin: 0;
+padding: 0;float:left;font: bold 15px Verdana;
+list-style-type: none;border-radius:2px;color:white;height:20px;
+
+ /* Main Menu Item widths*/background-color:#2C181C;padding:10px;border-bottom:1px solid black;border-top:1px solid black ; position:relative;
+}
+ul#nav li div ul li{border-bottom:0px solid black;border-top:1px solid black ;background-color:#3F3133;font: bold 12px Verdana;padding:10px ;height:16px;}
+div#drop1 {display:none;position:absolute;top:40px;left:-40px;}
+ul li:hover div#drop1 {display:block;z-index:10;}
+ul#nav li{width:120px;}
+ul#nav li:hover{background-color:#592732;}
+body{background-color:#A98A5D;}
+
+
+
+#drop1  ul li{float:none;z-index:10;}
+#drop1  ul li:hover{background-color:#2C181C/*#503E7D*/;}
+#drop1  ul li div{display:none;position:absolute;top:0px;left:139px;background-color:#2C181C/*#402E7D*/;padding:5px 15px 5px 45px;width:846px;height:174px;}
+
+
+
+  #nav tr td{ font-style:Bold; font-size:.8em; 
+ color:white; padding:3px; /*background-color:#511E7D;*/text-align:left;width:80px;
+}
+ #nav tr td:hover{ color:black;background-color:#A68D6B;}
+  #nav  tr#tHead td{ font-style:Bold; font-size:.9em; 
+   
+}
+
+
+
+
+/*color nice background#302222#413728#A98A5D*/
+/*for second menu item*/
+div#drop2{position:absolute;left:-140px;top:41px;background-color:#2C181C;width:1015px;height:174px;z-index:10;display:none; padding:15px;font-size:.8em;}
+ ul li:hover div#drop2{display:block;}
+div#drop1  ul li:hover div{display:block;}
+div.sub2{margin-top:-37px;}
+div.sub3{margin-top:-74px;}
+div.sub4{margin-top:-111px;}
+div.sub5{margin-top:-148px;}
+
+/*for directly displaying first sub of second menu item*/
+div#drop2 div ul li div.sub1{display:block;}ul li#search{width:auto;height:20px;}ul#nav{margin-left:80;}
+

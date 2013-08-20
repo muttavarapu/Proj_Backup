@@ -1,6 +1,7 @@
 <?php require("includes/connection.php");
 require_once("includes/global.php");
-include("includes/functions.php");?>
+include("includes/functions.php");
+// this change is made to test git?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <HTML>
 <?php 

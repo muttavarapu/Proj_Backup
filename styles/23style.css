@@ -5,6 +5,8 @@
 .fb-like{position:relative;top:75px;left:483px;}
 #fb-like{position:relative;top:15px;left:143px;}
 .comment h1 span{float:right;}
+.comment .btn{margin-left:30px;}
+.comment .text{margin-left:10px;}
 .comment {background-color:#E6DFDF;padding:5px;margin-top:10px;}
 .left span{position:absolute; display:none;font-family: 'Papyrus Regular';font-size:.5em;background-color:white;border-radius:5px;padding:3px;width:auto; }
 .left a:hover span{display:inline;}

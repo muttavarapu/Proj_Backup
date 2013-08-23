@@ -47,7 +47,7 @@ die("Cannot load your request:" .mysql_error());
 						} 
 						while($row=mysql_fetch_array($result)){
 						echo '<div class ="tutorial"><b>'.$row[2].'</b><br><a class="youtube" href="http://www.youtube.com/watch?v='.$row[4].'" 
-            title="jQuery YouTube Popup Player Plugin TEST"> '.'<img class="thumb" src="http://img.youtube.com/vi/'.$row[4].'/mqdefault.jpg" alt="image"></img><img src="img/play.png" class="button"/></a><div class="clear"></div><b>Description:</b>'.$row[3].'</div>';
+            title="'.$row[2].'"> '.'<img class="thumb" src="http://img.youtube.com/vi/'.$row[4].'/mqdefault.jpg" alt="image"></img><img src="img/play.png" class="button"/></a><div class="clear"></div><b>Description:</b>'.$row[3].'</div>';
 						
 						}
 

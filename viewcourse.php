@@ -7,6 +7,10 @@ if(isset($_POST['submit'])){
 $cmt=mysql_real_escape_string($_POST['comment']);
 
 $quy=mysql_query("INSERT INTO membership.comments(tutorial_id,comment,c_date,u_id) VALUES ('$id','$cmt',now(),'$session_username')")or die("failed to enter data into db".mysql_error());
+}if(isset($_POST['notes'])){
+$note=mysql_real_escape_string($_POST['notes']);
+
+$quy=mysql_query("INSERT INTO membership.subscribers(notes,note_date) VALUES ('$note',now()) WHERE username='$session_username' AND id='$id' ")or die("failed to enter data into db".mysql_error());
 }
 
 ?>
@@ -136,13 +140,14 @@ while(    $row=mysql_fetch_array($result)){
 			$out1.='<div class="clear"></div><b>Description:</b>'.$read.'.......<a href="tutorial.php?id='.$row['id'].'" >Read More</a></div>';
 						
 						}
-						$out1.="</div></div><div class='login' id='notes'><div id='content'><br><h1 class='dhead'>Notes</h1>";
+						$out1.="</div></div><div class='login' ><div id='content'><br><h1 class='dhead'>Notes</h1>";
 						if($loggedin==1){
 						if($check==1){
-							$q="SELECT notes FROM membership.subscribers WHERE id={$id} AND username='$session_username'";
+							$q="SELECT notes,note_date FROM membership.subscribers WHERE id={$id} AND username='$session_username'";
 							$result4=mysql_query($q,$connection);
-							while($row=mysql_fetch_array($result4)){$out1.='<form action="viewcourse.php?id='.$id.'" method="post">  <textarea cols=85 rows=3 name="comment" placeholder="click to edit">';
-							$out1.=$row[0].'</textarea></br><input type="submit" name="submit" value="Add notes" /></form>';}
+							while($row=mysql_fetch_array($result4)){$out1.='<form action="viewcourse.php?id='.$id.'" method="post">  <textarea cols=85 rows=3 name="notes" placeholder="click to edit">';
+							$out1.=$row[0].'</textarea></br><input type="submit" name="notes" value="Add notes" /></form>';
+							if(!empty($row[0])){$out1.="Last Edited".$row[1];}}
 						}
 						else{$out1.='<form action="viewcourse.php?id='.$id.'" method="post">  <textarea cols=85 rows=3 name="comment" disabled >Please add the tutorial to your watchlist <br>Then youcan add notes</textarea></br><input type="submit" name="submit" value="Add Notes"disabled/></form>';}}
 						else{$out1.='<form action="viewcourse.php?id='.$id.'" method="post"><textarea cols=85 rows=3 name="comment" disabled >Please Log in to comment</textarea></br><input type="submit" name="submit" value="Add notes"disabled/></form>';}
@@ -164,8 +169,8 @@ $result3=mysql_query($quirey3,$connection);
 
 						} while($crow=mysql_fetch_array($result3)){
 					
-					$comment.="<div class='comment' id='c".$crow[0]."'><h1>{$crow[4]}<span>{$crow[3]}<span></h1><p>nl2br".nl2br($crow[2])."</p>";
-					if($crow[4]==$session_username){$comment.='<button id="s'.$crow[0].'" onclick="delCmt('.$crow[0].')"><img src="img/eye.png" alt="del"/></button><span id="'.$crow[0].'">Remove this comment</span>';}
+					$comment.="<div class='comment' id='c".$crow[0]."'><h1>{$crow[4]}<span>{$crow[3]}<span></h1><p>".nl2br($crow[2])."</p>";
+					if($crow[4]==$session_username){$comment.='<div class="btn" id="s'.$crow[0].'" onclick="delCmt('.$crow[0].')"><img src="img/del2.png" alt="del"/></div><span class="text" id="'.$crow[0].'">Remove this comment</span></div>';}
 					else{$comment.='</div>';}
      
 						}

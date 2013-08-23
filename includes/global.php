@@ -18,6 +18,7 @@ if(isset($_SESSION['username'])){
 						$_SESSION['id']=$session_id;
 						$_SESSION['username']=$session_username;
 						$_SESSION['pass']=$session_pass;
+						$_SESSION['w_count']=$w_count;
 						$loggedin=1;}
 				else{
 				header("Location:login.php");
@@ -28,8 +29,8 @@ elseif(isset($_COOKIE['id_cookie'])){
 $session_id=$_COOKIE['id_cookie'];
 $session_username=$_COOKIE['username_cookie'];
 $session_pass=$_COOKIE['pass_cookie'];
-$query=mysql_query("SELECT * FROM membership.members WHERE id='$session_id' AND password='$session_pass' LIMIT 1") or die("Could not check the session");
-$count_count=mysql_num_rows($query);
+
+				$count_count=mysql_num_rows($query);
 if($count_count > 0){$loggedin=1;}
 else{
 header("Location:login.php");

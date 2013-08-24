@@ -1,7 +1,6 @@
 <?php 
 $ip = $_SERVER["REMOTE_ADDR"];
 session_start();
-
 //check if session is set
 if(isset($_SESSION['username'])){
 				$session_username=$_SESSION['username'];
